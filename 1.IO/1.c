@@ -5,15 +5,11 @@
 	> Created Time: 2019年07月23日 星期二 15时29分19秒
  ************************************************************************/
 
-#include<stdio.h>
+#include <stdio.h>
 int main() {
-    
     int n;
-    int x;
     while (scanf("%d", &n) != EOF) {
-        x = printf("%d\n",n);
-        printf(" has %d digits\n", x);
-
+        printf(" has %d digits\n", printf("%d", n));
     }
     return 0;
 }

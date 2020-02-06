@@ -9,9 +9,10 @@
 int main() {
     char str[100];
     int ret;
-    while ((ret = scanf("%[^\n]s", str)) != EOF) {
-        getchar();
+    while ((ret = scanf("%[^\n]s", str)) != EOF) {//当当前字符不是\n是就一直读入！！！！
+        getchar();//吸收掉换行
         printf(" has %d chars\n", printf("%s", str));
+        printf("ret = %d\n", ret);
     }
     return 0;
 }

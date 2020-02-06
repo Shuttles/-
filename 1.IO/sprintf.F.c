@@ -8,8 +8,7 @@
 //此题目：将一个ＩＰ地址写入一个字符串，给予一个三位二进制（输入是十进制）权限，
 //如果最后一位是１，加个（），如果倒数第二位是１，加个[]，如果倒数第三位是１，加个｛｝。
 #include<stdio.h>
-int main()
-{
+int main() {
     int n;
     scanf("%d", &n);
     char str[10000];
@@ -17,12 +16,9 @@ int main()
     printf("str=%s\n", str);
     if (n & 1) {
         sprintf(str, "(%s)", str);
-
     } 
     if (n & 2) {
         sprintf(str, "[%s]", str);
-
-
     }
     if (n & 4) {
         sprintf(str, "{%s}", str);

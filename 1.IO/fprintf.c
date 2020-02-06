@@ -10,15 +10,15 @@
      __typeof(a) temp = a;\
     a = b, b = temp;\
   }
-int main() {
 
+int main() {
     int n;
     scanf("%d", &n);
     char str[100];
     char buff[100];
     char *p = str, *q = buff;
     sprintf(str, "%d.%d.%d.%d",192, 168, 1, 10);
-    printf("%s\n", str);
+    printf("str = %s\n", str);
     if (n & 1){
         sprintf(q, "(%s)", p);
         swap(p, q);
@@ -31,6 +31,10 @@ int main() {
         sprintf(q, "{%s}", p);
         swap(p, q);
     }
-    printf("%s\n", str);
+    FILE *fout = fopen("output", "w");
+    fprintf(fout, "%s\n", p);
+    fprintf(stdout, "stdout = %s\n", p);
+    fprintf(stderr, "stderr = %s\n", p);
+    fclose(fout);
     return 0;
 }
