@@ -171,6 +171,35 @@
 
 ## 5.第五阶段--输出错误提示
 
+1. 错误提示分为两部分，第二部分比较难，就是`"实际运算结果 VS 期待运算结果"`，前面所有为第一部分。
+
+2. 第一部分
+
+   直接printf输出即可
+
+   ```c
+   //在test.h中的EXPECT宏中
+       if (_a cmp _b) haizei_test_info.success += 1;\
+       else {\
+           printf("\n");\
+           printf(YELLOW_HL("\t%s:%d : Failure\n"), __FILE__, __LINE__);\
+           printf(YELLOW_HL("\t\texpect " #a " " #cmp " " #b " actual: "));\
+           printf("\n");\
+       }\
+   ```
+
+3. 第二部分
+
+   + 为啥不能用函数来实现？
+
+     ==因为实际运算结果不一定是什么类型的呢！==
+
+     所以要用宏
+
+   + 而且要用泛型宏`_Generic`
+
+   + 然而我照着光哥代码写还是报错。。目前还没搞懂原因，详情见test.h
+
 
 
 
