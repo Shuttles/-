@@ -50,7 +50,7 @@
 
 1. 编译命令
 
-   `g++ -L ./lib main.cpp -lgtest -I ./include/ -lpthread`
+   `g++ -L ./lib -lgtest main.cpp  -I ./include/ -lpthread`
 
    + -lgtest相当于找`./lib`下的`libgtest.a`
 
