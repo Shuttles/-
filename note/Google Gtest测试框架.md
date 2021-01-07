@@ -53,16 +53,22 @@
    `g++ -L ./lib -lgtest main.cpp  -I ./include/ -lpthread`
 
    + -lgtest相当于找`./lib`下的`libgtest.a`
+   
+2. 最新发现！！！(2021.1.7)
 
+   我又一次尝试使用gtest时发现总是编译不成功(就用的上面的命令)，总是报错“未定义的使用”，找了一下午bug，最终发现是顺序问题！！！写成下面这样就对了！！
 
+   `g++ -I ./include/ main.cpp -L ./lib/ -lgtest -lpthread`
 
-
+   + 最终找到bug是因为这篇文章https://www.cnblogs.com/oloroso/p/4688426.html
+   + 但是还是没懂 ==以前为什么就对 现在为什么就得这么写呢？==
 
 ## 断言
 
 1. 什么是断言？
 
-   断言就是错了就直接退出程序
+   + ASSERT
+   + EXPECT 如果错了，不会结束程序运行
 
 ## 启示
 
