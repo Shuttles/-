@@ -18,7 +18,7 @@
 */
 
 
-#define TYPE(a) _Generic((a),\
+#define TYPE(X) _Generic((X),\
     int : "int",\
     double : "double"\
 )
@@ -32,6 +32,8 @@ int main()
     //so，结论就是，下一行是对的，而上面两行是错的，不懂为啥。。。
     //难道是只在运行时才计算什么类型？
     printf(TYPE(a));
+    printf("\n");
+    printf(TYPE(b));
     printf("\n");
     return 0;
 }
