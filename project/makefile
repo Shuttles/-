@@ -9,8 +9,10 @@ main.o: main.cpp
 	g++ -I./ -c main.cpp
 
 haizei/test.o: haizei/test.h haizei/test.cc
-	g++ -I ./ -o haizei/test.o -c haizei/test.cc
+	g++ -I./ -o haizei/test.o -c haizei/test.cc
 
+run: all
+	./bin/haizei
 
 clean:
-	rm -rf ./a.out *.o
+	rm -rf ./a.out *.o ./haizei/*.o ./bin/haizei
