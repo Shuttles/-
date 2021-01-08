@@ -55,11 +55,11 @@ void a##_haizei_##b()
     } else {\
         printf("\n");\
         printf(YELLOW_HL("\t%s : %d : Failure\n"), __FILE__, __LINE__);\
-        printf(YELLOW_HL("\t\texpect :" #a " " #comp " " #b " actual : "));\
+        printf(YELLOW_HL("\t\texpect :" #a " " #comp " " #b "; actual: "));\
         P(_a, YELLOW_HL);\
-        P(" vs ", YELLOW_HL);\
+        P(" vs MyFunction:", YELLOW_HL);\
         P(_b, YELLOW_HL);\
-        printf("\n");\
+        printf("\n\n");\
     }\
     printf(GREEN("[-----------] ") #a " " #comp " " #b);\
     printf(" %s\n", (a) comp (b) ? GREEN_HL("TRUE") : RED_HL("FALSE"));\
