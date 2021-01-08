@@ -55,9 +55,9 @@ void a##_haizei_##b()
     } else {\
         printf("\n");\
         printf(YELLOW_HL("\t%s : %d : Failure\n"), __FILE__, __LINE__);\
-        printf(YELLOW_HL("\t\texpect :" #a " " #comp " " #b "; actual: "));\
+        printf(YELLOW_HL("\t\texpect :" #a " " #comp " " #b "; MyFunction: "));\
         P(_a, YELLOW_HL);\
-        P(" vs MyFunction:", YELLOW_HL);\
+        P(" vs Actual:", YELLOW_HL);\
         P(_b, YELLOW_HL);\
         printf("\n\n");\
     }\
