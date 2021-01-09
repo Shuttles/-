@@ -16,7 +16,7 @@
 //T是下一个node的数据类型
 //name是指针域的名字
 //返回的是T*类型的首地址
-#define Head(p, T, name)  ((T *)(((char *)p) - offset(T, name)))
+#define Head(p, T, name)  ((T *)(((char *)p) - (char *)offset(T, name)))
 
 //链表外骨骼 妙啊！
 //可以存放在数据域不同的struct里！通用性很强！
