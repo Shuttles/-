@@ -22,6 +22,7 @@ TEST(testFunc, add) {
     EXPECT_GT(add(6, 7), 10);
     EXPECT_LE(add(6, 7), 13);
     EXPECT_GT(add(6, 7), 20);
+    EXPECT_EQ(add(8, 7), 15.3);
 }
 
 TEST(testFunc, add2) {
