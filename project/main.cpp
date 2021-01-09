@@ -10,7 +10,7 @@
 #include <pthread.h>
 #include <haizei/test.h>
 #include <iostream>
-using namespace std;
+#include <math.h>
 
 int add(int a, int b) {
     return a + b;

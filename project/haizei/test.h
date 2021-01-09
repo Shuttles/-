@@ -8,6 +8,8 @@
 #ifndef _TEST_H
 #define _TEST_H
 
+#include <haizei/linklist.h>
+
 #define COLOR(a, b) "\033[" #b "m" a "\033[0m"
 #define COLOR_HL(a, b) "\033[1;" #b "m" a "\033[0m"
 
@@ -77,6 +79,7 @@ typedef void (*TestFuncT)();
 struct Function {
     TestFuncT func;
     const char *str;
+    struct LinkNode p;//链表外骨骼  妙啊！
 };
 
 
@@ -85,6 +88,18 @@ struct FunctionInfo {
 };
 
 extern struct FunctionInfo haizei_test_info;
+
+/*
+struct LinkNode {
+    struct Function f;
+    struct LinkNode *next;
+};
+
+struct LinkList {
+    struct LinkNode head;
+    struct LinkNode *tail;
+    int n;
+};*/
 
 int RUN_ALL_TESTS();
 void add_function(TestFuncT, const char *);
