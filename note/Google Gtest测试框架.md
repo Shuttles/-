@@ -269,3 +269,13 @@
      将`haizei_test_info`定义在==源文件==`test.cc`中，在头文件`test.h`中声明即可。
    
 3. _Generic泛型宏在ubuntu上编译不通过，但是在mac中就编译成功了，难道是底层编译器不同导致的？
+
+
+
+## 不懂的地方
+
+haizei/test.h
+
+1. 函数指针
+2. `__attribute__((constructor))`
+3. 为什么`add_function`外面要包一层？
