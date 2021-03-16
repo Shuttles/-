@@ -5,6 +5,7 @@
 #include <math.h>
 #include <haizei/linklist.h>
 
+
 struct Function func_head, *func_tail = &func_head;
 struct FunctionInfo haizei_test_info;
 
@@ -24,6 +25,7 @@ int RUN_ALL_TESTS() {
         printf(GREEN("  ] "));
         printf(CYAN_HL("success : %d, total : %d\n"), haizei_test_info.success, haizei_test_info.total);
 
+        (p->next) && printf("\n");
     }
     return 0;
 }
@@ -34,5 +36,8 @@ void add_function(TestFuncT func, const char *str) {
     temp->str = strdup(str);
     func_tail->p.next = &(temp->p);
     func_tail = temp;
+
+    
+
     return ;
 }
