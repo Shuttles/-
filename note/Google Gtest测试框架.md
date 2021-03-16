@@ -279,3 +279,11 @@ haizei/test.h
 1. 函数指针
 2. `__attribute__((constructor))`
 3. 为什么`add_function`外面要包一层？
+
+
+
+
+
+haizei/linkedlist.h
+
+1. C语言中类型的存在是为了什么？

@@ -8,6 +8,8 @@
 #ifndef _TEST_H
 #define _TEST_H
 
+#include <haizei/linklist.h>
+
 #define COLOR(a, b) "\033[" #b "m" a "\033[0m"
 #define COLOR_HL(a, b) "\033[1;" #b "m" a "\033[0m"
 
@@ -41,7 +43,7 @@ void a##_haizei_##b()
     double : "%lf",\
     float : "%f",\
     long long : "%lld",\
-    const char * : "\s"\
+    const char * : "%s"\
 )
 
 #define P(a, color) {\
@@ -80,6 +82,7 @@ typedef void (*TestFuncT)();
 struct Function {
     TestFuncT func;
     const char *str;
+    struct LinkNode p;
 };
 
 struct FunctionInfo {
