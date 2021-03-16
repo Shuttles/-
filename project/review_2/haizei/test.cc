@@ -21,7 +21,7 @@ int RUN_ALL_TESTS() {
             printf(RED_HL("%6.2lf%%"), rate);
         }
         printf(GREEN("  ] "));
-        printf(YELLOW_HL("success : %d, total : %d\n"), haizei_test_info.success, haizei_test_info.total);
+        printf(CYAN_HL("success : %d, total : %d\n"), haizei_test_info.success, haizei_test_info.total);
 
         (i != func_cnt - 1) && printf("\n");
     }

@@ -15,11 +15,15 @@
 #define RED(a) COLOR(a, 31)
 #define YELLOW(a) COLOR(a, 33)
 #define BLUE(a) COLOR(a, 34)
+#define PURPLE(a) COLOR(a, 35)
+#define CYAN(a) COLOR(a, 36)
 
 #define GREEN_HL(a) COLOR_HL(a, 32)
 #define RED_HL(a) COLOR_HL(a, 31)
 #define YELLOW_HL(a) COLOR_HL(a, 33)
 #define BLUE_HL(a) COLOR_HL(a, 34)
+#define PURPLE_HL(a) COLOR_HL(a, 35)
+#define CYAN_HL(a) COLOR_HL(a, 36)
 
 
 #define TEST(a, b) \
@@ -31,13 +35,36 @@ void add##_haizei_##a##_haizei_##b() {\
 void a##_haizei_##b()
 
 
+//然而在ubuntu上总是报错，mac上却不报错
+#define TYPE_STR(a) _Generic((a),\
+    int : "%d",\
+    double : "%lf",\
+    float : "%f",\
+    long long : "%lld",\
+    const char * : "\s"\
+)
+
+#define P(a, color) {\
+    char frm[1000];\
+    sprintf(frm, color("%s"), TYPE_STR(a));\
+    printf(frm, a);\
+}
+
+
 #define EXPECT(a, b, comp) {\
     printf(GREEN("[-----------] ") #a " " #comp " " #b);\
     __typeof(a) _a = (a);\
     __typeof(b) _b = (b);\
+    printf(" %s\n", ((_a) comp (_b)) ? GREEN_HL("TRUE") : RED_HL("FALSE"));\
     haizei_test_info.total += 1;\
     if (_a comp _b) haizei_test_info.success += 1;\
-    printf(" %s\n", ((_a) comp (_b)) ? GREEN_HL("TRUE") : RED_HL("FALSE"));\
+    else {\
+        printf("\n");\
+        printf(YELLOW_HL("\t%s : %d: Failure\n"), __FILE__, __LINE__);\
+        printf(YELLOW_HL("\t\texpect: " #a " " #comp " " #b));\
+        printf(YELLOW_HL(" actual: ") "\n");\
+        printf("\n");\
+    }\
 }
 
 #define EXPECT_EQ(a, b) EXPECT(a, b, ==)
