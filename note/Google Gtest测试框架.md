@@ -279,6 +279,7 @@ haizei/test.h
 1. 函数指针
 2. `__attribute__((constructor))`
 3. 为什么`add_function`外面要包一层？
+4. 为什么打印错误断言输出时，不能直接输出`#_a vs #_b`？？
 
 
 
